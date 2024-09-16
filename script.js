@@ -86,7 +86,7 @@ catalogo.agregarCategoria(mascotas);
 catalogo.mostrarCategorias();
 
 // Pedir al usuario que seleccione una categoría
-const seleccion = parseInt(prompt("Elige una categoría (1-4):"), 10);
+const seleccion = parseInt(prompt("Elige una categoría: \n 1. Bienestar \n 2. Aseo \n 3. Hogar \n 4. Mascotas:"), 10);
 
 // Mostrar subcategorías de la categoría seleccionada
 catalogo.seleccionarCategoria(seleccion);
