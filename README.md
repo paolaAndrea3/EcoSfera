@@ -1,5 +1,6 @@
 <div align="center">
-  <img height="200" src="https://cdn.vectorstock.com/i/preview-1x/40/15/banner-software-development-programming-web-site-vector-38004015.jpg"  />
+  <img height="200" width="100%"
+src="https://cdn.vectorstock.com/i/preview-1x/40/15/banner-software-development-programming-web-site-vector-38004015.jpg"  />
 </div>
 
 ###
