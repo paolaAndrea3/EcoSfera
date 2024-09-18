@@ -1,92 +1,70 @@
-// Clase principal para Categoría
-class Categoria {
-    constructor(nombre) {
-        this.nombre = nombre;
-        this.subcategorias = [];
+// Datos de las categorías y subcategorías
+const catalogo = [
+    {
+        nombre: 'Bienestar',
+        subcategorias: ['Salud mental', 'Fitness', 'Nutrición']
+    },
+    {
+        nombre: 'Aseo',
+        subcategorias: ['Cuidado personal', 'Higiene corporal', 'Productos de limpieza']
+    },
+    {
+        nombre: 'Hogar',
+        subcategorias: ['Mobiliario', 'Decoración', 'Electrodomésticos']
+    },
+    {
+        nombre: 'Mascotas',
+        subcategorias: ['Alimentación', 'Cuidado e higiene', 'Accesorios']
     }
+];
 
-    // Método para agregar subcategoría
-    agregarSubcategoria(subcategoria) {
-        this.subcategorias.push(subcategoria);
-    }
-
-    // Mostrar todas las subcategorías
-    mostrarSubcategorias() {
-        console.log(`Subcategorías de ${this.nombre}:`);
-        this.subcategorias.forEach(subcat => {
-            console.log(` - ${subcat}`);
-        });
+// Función para mostrar todas las categorías
+function mostrarCategorias() {
+    console.log('Categorías disponibles:');
+    for (let i = 0; i < catalogo.length; i++) {
+        console.log(`${i + 1}. ${catalogo[i].nombre}`);
     }
 }
 
-// Crear instancias de Categoría y agregar subcategorías
-class Catalogo {
-    constructor() {
-        this.categorias = [];
-    }
-
-    // Método para agregar categorías
-    agregarCategoria(categoria) {
-        this.categorias.push(categoria);
-    }
-
-    // Método para mostrar todas las categorías
-    mostrarCategorias() {
-        console.log('Categorías disponibles:');
-        this.categorias.forEach((categoria, index) => {
-            console.log(`${index + 1}. ${categoria.nombre}`);
-        });
-    }
-
-    // Método para seleccionar una categoría y mostrar sus subcategorías
-    seleccionarCategoria(indice) {
-        const categoria = this.categorias[indice - 1]; // -1 porque el array empieza en 0
-        if (categoria) {
-            categoria.mostrarSubcategorias();
-        } else {
+// Función para mostrar las subcategorías según la categoría seleccionada
+function mostrarSubcategorias(indice) {
+    switch (indice) {
+        case 1:
+            console.log(`Subcategorías de ${catalogo[0].nombre}:`);
+            for (let i = 0; i < catalogo[0].subcategorias.length; i++) {
+                console.log(` - ${catalogo[0].subcategorias[i]}`);
+            }
+            break;
+        case 2:
+            console.log(`Subcategorías de ${catalogo[1].nombre}:`);
+            for (let i = 0; i < catalogo[1].subcategorias.length; i++) {
+                console.log(` - ${catalogo[1].subcategorias[i]}`);
+            }
+            break;
+        case 3:
+            console.log(`Subcategorías de ${catalogo[2].nombre}:`);
+            for (let i = 0; i < catalogo[2].subcategorias.length; i++) {
+                console.log(` - ${catalogo[2].subcategorias[i]}`);
+            }
+            break;
+        case 4:
+            console.log(`Subcategorías de ${catalogo[3].nombre}:`);
+            for (let i = 0; i < catalogo[3].subcategorias.length; i++) {
+                console.log(` - ${catalogo[3].subcategorias[i]}`);
+            }
+            break;
+        default:
             console.log('Categoría no encontrada.');
-        }
+            break;
     }
 }
-
-// Instancia de la clase Catálogo
-const catalogo = new Catalogo();
-
-// Categoría: Bienestar
-const bienestar = new Categoria('Bienestar');
-bienestar.agregarSubcategoria('Salud mental');
-bienestar.agregarSubcategoria('Fitness');
-bienestar.agregarSubcategoria('Nutrición');
-
-// Categoría: Aseo
-const aseo = new Categoria('Aseo');
-aseo.agregarSubcategoria('Cuidado personal');
-aseo.agregarSubcategoria('Higiene corporal');
-aseo.agregarSubcategoria('Productos de limpieza');
-
-// Categoría: Hogar
-const hogar = new Categoria('Hogar');
-hogar.agregarSubcategoria('Mobiliario');
-hogar.agregarSubcategoria('Decoración');
-hogar.agregarSubcategoria('Electrodomésticos');
-
-// Categoría: Mascotas
-const mascotas = new Categoria('Mascotas');
-mascotas.agregarSubcategoria('Alimentación');
-mascotas.agregarSubcategoria('Cuidado e higiene');
-mascotas.agregarSubcategoria('Accesorios');
-
-// Agregar categorías al catálogo
-catalogo.agregarCategoria(bienestar);
-catalogo.agregarCategoria(aseo);
-catalogo.agregarCategoria(hogar);
-catalogo.agregarCategoria(mascotas);
 
 // Mostrar las categorías disponibles
-catalogo.mostrarCategorias();
+mostrarCategorias();
 
 // Pedir al usuario que seleccione una categoría
-const seleccion = parseInt(prompt("Elige una categoría: \n 1. Bienestar \n 2. Aseo \n 3. Hogar \n 4. Mascotas:"), 10);
+const seleccion = parseInt(prompt("Elige una categoría \n 1. Bienestar \n 2. Aseo \n 3. Hogar \n 4. Mascotas:"), 10);
 
 // Mostrar subcategorías de la categoría seleccionada
-catalogo.seleccionarCategoria(seleccion);
+mostrarSubcategorias(seleccion);
+
