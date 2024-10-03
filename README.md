@@ -20,7 +20,7 @@ src="https://cdn.vectorstock.com/i/preview-1x/40/15/banner-software-development-
 
 ###
 
-<h3 align="left">El grupo esta integrado por:<br> <br>Carol Rivera.<br>Sebastián Pedroza.<br>Julián Usme.<br>Paola Murillo.<br>Sebastián Castaño.</h3>
+<h3 align="left">El grupo esta integrado por:<br> <br>Carol Rivera.<br>Sebastián Pedroza.<br>Julián Usma.<br>Paola Murillo.<br>Sebastián Castaño.</h3>
 
 ###
 
