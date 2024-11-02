@@ -8,7 +8,7 @@ const productos = [{
     nombrePoducto: 'Cepillo de dienntes ecologico',
     precio: 13900,
     descripcion: 'lorem ipsum',
-    categoria, 'Aseo personal'
+    categoria: 'Aseo personal'
 },
 {
     nombrePoducto: 'Rubor pasta dura',
