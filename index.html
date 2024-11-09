@@ -174,9 +174,56 @@
           </div>
         </div>
     </footer>
-    <div>
+    
       <!--Inicio de sesión y registro por Paola Andrea Murillo-->
+   
+      <section class="relative bg-cover bg-center" style="background-image: url(https://img.freepik.com/premium-photo/green-background-with-paper-packaging-green-leaves_14117-1181962.jpg?w=826); height: 100vh;">
+        <!-- Formulario de Inicio de Sesión -->
+          <div class="flex justify-center items-center h-full">
+        <form id="form-login" class="bg-gradient-to-r from-cyan-300 via-transparent to-transparent p-6 rounded-lg shadow-md w-80 space-y-4 backdrop-blur-lg"> 
+      <h2 class="text-2xl font-bold text-center text-gray-700">Iniciar Sesión</h2>
+      <div>
+          <label for="usuario" class="block text-gray-600">Usuario</label>
+          <input id="usuario" type="text" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Ingresa tu usuario">
+      </div>
+      <div>
+          <label for="contrasena" class="block text-gray-600">Contraseña</label>
+          <input id="contrasena" type="password" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Ingresa tu contraseña">
+      </div>
+      <div class="flex justify-between items-center">
+          <button id="btnIniciarSesion" type="button" onclick="iniciarSesion()" class="bg-cyan-400 text-white py-2 px-4 rounded-md hover:bg-cyan-500	">Iniciar Sesión</button>
+          <button type="button" id="btnLogin" class="text-cyan-500 hover:underline">¿No tienes cuenta?</button>
+      </div>
+    </form>
+    
+    <!-- Formulario de Registro -->
+    <form id="form-register" class="bg-gradient-to-r from-cyan-300 via-transparent to-transparent p-6 rounded-lg shadow-md w-80 space-y-4 hidden backdrop-blur-lg">
+      <h2 class="text-2xl font-bold text-center text-gray-700">Registro</h2>
+      <div>
+          <input placeholder="Nombre" id="rnombre" type="text" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400">
+      </div>
+      <div>
+          <input placeholder="Correo" id="rcorreo" type="email" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400">
+      </div>
+      <div>
+          <input placeholder="Contraseña" id="rcontrasena" type="password" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400">
+      </div>
+     <div>
+          <input placeholder="Usuario" id="rusuario" type="text" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400">
+      </div>
+      <div class="flex justify-between items-center">
+          <button id="btnRegistrarUsuario" type="button" class="bg-cyan-400 text-white py-2 px-4 rounded-md hover:bg-cyan-500">Registrar</button>
+          <button id="btnRegistro" type="button" class="text-cyan-500 hover:underline">¿Ya tienes una cuenta?</button>
+      </div>
+    </form>
     </div>
-    <script src="script.js"></script>
+    </section>
+    
+
+
+
+
+      <!--   ----------------------------------------------- -->
+    <script type="module" src="script.js"></script>
   </body>
 </html>
