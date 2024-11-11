@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="shrotcut icon" href="./accents/logoEcoSfera.png">
     <link rel="stylesheet" href="./styles.css">
     <title>EcoSfera</title>
@@ -21,7 +19,7 @@
           <nav class="flex items-center font-medium text-lg">
             <div class="mr-5"> 
               <input type="search" id="searchInput" placeholder="Search" class="border-2 rounded-md mr-3 pl-3">
-              <button type="button" class="hover:bg-cyan-300 rounded-md"><i class="fa-solid fa-magnifying-glass mr-3"></i></button>
+              <button id="ingresar" type="button" class="hover:scale-110"><i class="fa-solid fa-magnifying-glass mr-3"></i></button>
             </div>
             <select class="border-0 bg-gradient-to-t from-cyan-200 to-transparent" name="categorias" id="categoria">
               <option value="aseoPersonal">Aseo personal</option>
@@ -29,9 +27,9 @@
               <option value="bienestarYBelleza">Bienestar y belleza</option>
               <option value="mascotas">Mascotas</option>
             </select>
-            <a href="blog.html" class="pl-8">Blog</a>
-            <a href="#" class="pl-8" id="cuenta">Mi cuenta</a>
-            <a href="#"><img src="./accents/carritodecompras.png" alt="carrito de compras" class="pl-8 h-8"></a>
+            <a href="blog.html" class="pl-4 hover:text-white hover:scale-110">Blog</a>
+            <a href="login.html" class="pl-4 hover:text-white hover:scale-110">Ingresar</a>
+            <a href="#" class="pr-4 pl-4 hover:text-white hover:scale-110"><i class="fa-solid fa-cart-shopping"></i></a>
           </nav>
     </header>
     <main>
@@ -179,59 +177,10 @@
             <i class="fa-brands fa-square-instagram"></i>
           </div>
         </div>
-    </footer>
-    
-      <!--Inicio de sesión y registro por Paola Andrea Murillo-->
-   
-      
-        <!-- Formulario de Inicio de Sesión -->
-        <section id="formulario" class="relative bg-cover bg-center" style="background-image: url(https://img.freepik.com/premium-photo/green-background-with-paper-packaging-green-leaves_14117-1181962.jpg?w=826); height: 100vh; display: none;" >
-          <!-- Formulario de Inicio de Sesión -->
-            <div class="flex justify-center items-center h-full">
-          <form id="form-login" class="bg-gradient-to-r from-slate-100 via-transparent to-transparent p-6 rounded-lg shadow-md w-80 space-y-4 backdrop-blur-lg"> 
-        <h2 class="text-2xl font-bold text-center text-gray-700">Iniciar Sesión</h2>
-        <div>
-            <label for="usuario" class="block text-gray-600">Usuario</label>
-            <input id="usuario" type="text" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Ingresa tu usuario">
-        </div>
-        <div>
-            <label for="contrasena" class="block text-gray-600">Contraseña</label>
-            <input id="contrasena" type="password" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Ingresa tu contraseña">
-        </div>
-        <div class="flex justify-between items-center">
-            <button id="btnIniciarSesion" type="button" onclick="iniciarSesion()" class="bg-cyan-400 text-white py-2 px-4 rounded-md hover:bg-cyan-500	">Iniciar Sesión</button>
-            <button type="button" id="btnLogin" class="text-cyan-500 hover:underline">¿No tienes cuenta?</button>
-        </div>
-      </form>
-      
-      <!-- Formulario de Registro -->
-      <form id="form-register" class="bg-gradient-to-r from-slate-100 via-transparent to-transparent p-6 rounded-lg shadow-md w-80 space-y-4 hidden backdrop-blur-lg">
-        <h2 class="text-2xl font-bold text-center text-gray-700">Registro</h2>
-        <div>
-            <input placeholder="Nombre" id="rnombre" type="text" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400">
-        </div>
-        <div>
-            <input placeholder="Correo" id="rcorreo" type="email" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400">
-        </div>
-        <div>
-            <input placeholder="Contraseña" id="rcontrasena" type="password" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400">
-        </div>
-       <div>
-            <input placeholder="Usuario" id="rusuario" type="text" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400">
-        </div>
-        <div class="flex justify-between items-center">
-            <button id="btnRegistrarUsuario" type="button" class="bg-cyan-400 text-white py-2 px-4 rounded-md hover:bg-cyan-500">Registrar</button>
-            <button id="btnRegistro" type="button" class="text-cyan-500 hover:underline">¿Ya tienes una cuenta?</button>
-        </div>
-      </form>
-      </div>
-      </section>
-    
+    </footer>  
 
-
-
-
-      <!--   ----------------------------------------------- -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="script.js"></script>
   </body>
 </html>

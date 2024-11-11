@@ -1,13 +1,28 @@
 import { usuarios } from "./database.js";
 
-document.getElementById('cuenta').addEventListener('click', mostrarPanelInicioDeSesion)
+//Seleccionamos los elementos de los botones y formularios
+const formLogin = document.getElementById("form-login");
+const formRegister = document.getElementById("form-register");
+const btnLogin = document.getElementById("btnLogin");
+const btnRegistro = document.getElementById("btnRegistro");
+
+// Al hacer clic en "¿No tienes cuenta?", mostramos el formulario de registro y ocultamos el de inicio de sesión
+btnLogin.addEventListener("click", (event) => {
+    event.preventDefault(); // Evita cualquier acción predeterminada, como recargar la página
+    formLogin.classList.add("hidden");
+    formRegister.classList.remove("hidden");
+});
+
+// Al hacer clic en "¿Ya tienes una cuenta?", mostramos el formulario de inicio de sesión y ocultamos el de registro
+btnRegistro.addEventListener("click", (event) => {
+    event.preventDefault(); // Evita cualquier acción predeterminada, como recargar la página
+    formRegister.classList.add("hidden");
+    formLogin.classList.remove("hidden");
+});
+
 document.getElementById('btnIniciarSesion').addEventListener('click', iniciarSesion)
 document.getElementById('btnRegistrarUsuario').addEventListener('click', registrarUsuario)
 
-function mostrarPanelInicioDeSesion() {
-    formRegister.classList.add("hidden");
-    formLogin.classList.remove("hidden");
-}   
 function iniciarSesion() {
     let nombreusuario = document.getElementById('usuario').value
     let contrasena = document.getElementById('contrasena').value
@@ -52,42 +67,64 @@ function registrarUsuario() {
     let nombre = document.getElementById('rNombre').value
     let correo = document.getElementById('rCorreo').value
     let contrasena = document.getElementById('rContrasena').value
-    let registroUsuario = document.getElementById('rUsuario').value
-    let usuario = {
-        nombre: nombre,
-        correo: correo,
-        contrasena: contrasena,
-        nombreUsuario: registroUsuario
-    }
-    usuarios.push(usuario)
-}
-
-/*Carol rivera*/
-// Crear una funcion que permita al usuario hacer una busqueda de productos.
-document.getElementById('searchInput').addEventListener('input', filterProducts);
-document.getElementById('categorySelect').addEventListener('change', filterProducts);
-
-function busquedaDeProductos() {
-    /Carol rivera/
-    // Crear una funcion que permita al usuario hacer una busqueda de productos. 
-    const searchQuery = document.getElementById('searchInput').value.toLowerCase();
-    const selectedCategory = document.getElementById('categorySelect').value;
-    const products = document.querySelectorAll('#productList li');
-
-    products.forEach(product => {
-        const productName = product.textContent.toLowerCase();
-        const productCategory = product.getAttribute('data-category');
-
-        const matchesSearch = productName.includes(searchQuery);
-        const matchesCategory = selectedCategory === 'all' || productCategory === selectedCategory;
-
-        if (matchesSearch && matchesCategory) {
-            product.style.display = 'block';
-        } else {
-            product.style.display = 'none';
+    let nombreUsuario = document.getElementById('rUsuario').value
+    let confirmarRegistro = usuarios.find((usuario) => {
+        if (usuario.nombreUsuario == nombreUsuario) {
+            Swal.fire({
+                title: "Error",
+                text: "Este nombe de usuario ya esta registrado",
+                icon: "error"
+              });
+        }else{
+            let usuario = {
+                nombre: nombre,
+                correo: correo,
+                contrasena: contrasena,
+                nombreUsuario: nombreUsuario
+            }
+            usuarios.push(usuario)
+            let redireccion
+            Swal.fire({
+                title: "¡Registrado con éxito!",
+                text: "Puedes iniciar sesión ahora.",
+                icon: "success",
+                willClose: () => {
+                    clearInterval(redireccion);
+                    window.location.href = 'login.html'
+                }
+            });
+            console.log(usuarios);
         }
-    });
+    })
+    
 }
+
+// /*Carol rivera*/
+// // Crear una funcion que permita al usuario hacer una busqueda de productos.
+// document.getElementById('searchInput').addEventListener('input', filterProducts);
+// document.getElementById('categorySelect').addEventListener('change', filterProducts);
+
+// function busquedaDeProductos() {
+//     /Carol rivera/
+//     // Crear una funcion que permita al usuario hacer una busqueda de productos. 
+//     const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+//     const selectedCategory = document.getElementById('categorySelect').value;
+//     const products = document.querySelectorAll('#productList li');
+
+//     products.forEach(product => {
+//         const productName = product.textContent.toLowerCase();
+//         const productCategory = product.getAttribute('data-category');
+
+//         const matchesSearch = productName.includes(searchQuery);
+//         const matchesCategory = selectedCategory === 'all' || productCategory === selectedCategory;
+
+//         if (matchesSearch && matchesCategory) {
+//             product.style.display = 'block';
+//         } else {
+//             product.style.display = 'none';
+//         }
+//     });
+// }
 
 
 function agregarAlCarrito(params) {
@@ -95,27 +132,5 @@ function agregarAlCarrito(params) {
     //Crear una funcion en la cual el usuario pueda agregar un producto al carrito de compras.
 }
 
-//------------------------------------------------------//
-//------------------------------------------------------//
 
-
-// Seleccionamos los elementos de los botones y formularios
-// const formLogin = document.getElementById("form-login");
-// const formRegister = document.getElementById("form-register");
-// const btnLogin = document.getElementById("btnLogin");
-// const btnRegistro = document.getElementById("btnRegistro");
-
-// // Al hacer clic en "¿No tienes cuenta?", mostramos el formulario de registro y ocultamos el de inicio de sesión
-// btnLogin.addEventListener("click", (event) => {
-//     event.preventDefault(); // Evita cualquier acción predeterminada, como recargar la página
-//     formLogin.classList.add("hidden");
-//     formRegister.classList.remove("hidden");
-// });
-
-// // Al hacer clic en "¿Ya tienes una cuenta?", mostramos el formulario de inicio de sesión y ocultamos el de registro
-// btnRegistro.addEventListener("click", (event) => {
-//     event.preventDefault(); // Evita cualquier acción predeterminada, como recargar la página
-//     formRegister.classList.add("hidden");
-//     formLogin.classList.remove("hidden");
-// });
 
