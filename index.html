@@ -3,28 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="shrotcut icon" href="./accents/logoEcoSfera.png">
+    <link rel="stylesheet" href="./styles.css">
     <title>EcoSfera</title>
   </head>
   <body>
-    <header class="w-11/12 m-auto flex justify-between items-center mt-6">
+    <header class="w-11/12 m-auto bg-gradient-to-t from-cyan-400 via-transparent to-transparent rounded-lg shadow-xl flex justify-between items-center mt-6">
+       <a href="index.html" >
         <div class=" flex items-center">
           <img src="./accents/logoEcoSfera.png" alt="icono de la tierra con una planta" class="h-15">
           <p class="ml-5 text-5xl font-bold">Eco<span class="text-2xl font-medium">Sfera</span></p>
         </div>
+       </a>
           <nav class="flex items-center font-medium text-lg">
-            <select name="categorias" id="categoria">
+            <div class="mr-5"> 
+              <input type="search" id="searchInput" placeholder="Search" class="border-2 rounded-md mr-3 pl-3">
+              <button type="button" class="hover:bg-cyan-300 rounded-md"><i class="fa-solid fa-magnifying-glass mr-3"></i></button>
+            </div>
+            <select class="border-0 bg-gradient-to-t from-cyan-200 to-transparent" name="categorias" id="categoria">
               <option value="aseoPersonal">Aseo personal</option>
               <option value="hogar">Hogar</option>
               <option value="bienestarYBelleza">Bienestar y belleza</option>
               <option value="mascotas">Mascotas</option>
             </select>
-            <a href="#" class="pl-8">Blog</a>
-            <a href="#" class="pl-8 ">Mi cuenta</a>
-            <a href="#" class="pl-8">lorem</a>
+            <a href="blog.html" class="pl-8">Blog</a>
+            <a href="#" class="pl-8" id="cuenta">Mi cuenta</a>
             <a href="#"><img src="./accents/carritodecompras.png" alt="carrito de compras" class="pl-8 h-8"></a>
           </nav>
     </header>
@@ -41,37 +47,37 @@
         para los primeros 4 paneles prancuede tomar referencia de la pagina valorable y para los otros 5 panes inferiores se puede apoyarse en 
         la pagina oiris. Los paneles no son interactivos con el usuario, son informacion estatica-->
         <div class="w-11/12 my-20 p-20 m-auto grid gap-x-20 grid-cols-4 ml-14 mt-8">
-          <div class="card w-60 h-14 bg-sky-200 border border-gray  rounded-lg text-lg font-medium flex items-center justify-center">Productos 100% confiables</div>
-          <div class="card w-60 h-14 bg-sky-200 border border-gray  rounded-lg text-lg font-medium flex items-center justify-center">Envíos a todo el país</div>
-          <div class="card w-60 h-14 bg-sky-200 border border-gray  rounded-lg text-lg font-medium flex items-center justify-center">Medios de pago</div>
-          <div class="card w-60 h-14 bg-sky-200 border border-gray  rounded-lg text-lg font-medium flex items-center justify-center">Garantía total</div>
+          <div class="card w-60 h-14 bg-cyan-300 border border-gray shadow-lg rounded-lg text-lg font-medium flex items-center justify-center">Productos 100% confiables</div>
+          <div class="card w-60 h-14 bg-cyan-300 border border-gray shadow-lg rounded-lg text-lg font-medium flex items-center justify-center">Envíos a todo el país</div>
+          <div class="card w-60 h-14 bg-cyan-300 border border-gray shadow-lg rounded-lg text-lg font-medium flex items-center justify-center">Medios de pago</div>
+          <div class="card w-60 h-14 bg-cyan-300 border border-gray shadow-lg rounded-lg text-lg font-medium flex items-center justify-center">Garantía total</div>
           </div> 
          </div>
-         <div class="w-11/12 my-20 p-20 m-auto grid gap-x-12 grid-cols-5 ml-14 mt-14">
+         <div class="w-11/12 my-20 p-20 m-auto grid gap-x-12 grid-cols-5 ml-14 mt-14 bg-gradient-to-b from-cyan-400 to-transparent shadow-lg rounded-lg">
           <div class="w-60 h-60 flex flex-col items-center">
-          <img src="accents/echos_a_manos.jpeg" alt="">
-          <p class="text-lg font-medium">Hecho a mano</p>
+          <img class="rounded-xl shadow-lg" src="accents/echos_a_manos.jpeg" alt="">
+          <p class="text-lg font-medium mt-3">Hecho a mano</p>
          </div>
-          <div class="w-60 h-60 bg-sky-200 flex flex-col items-center">
-          <img src="accents/libre_de_crueldad_animal.jpeg" alt="">
-          <p class="text-lg font-medium">Libre de crueldad animal</p>
+          <div class="w-60 h-60 flex flex-col items-center">
+          <img class="rounded-xl shadow-lg" src="accents/libre_de_crueldad_animal.jpeg" alt="">
+          <p class="text-lg font-medium mt-3">Libre de crueldad animal</p>
          </div>
-          <div class="w-60 h-60 bg-sky-200 flex flex-col items-center">
-          <img src="accents/ingredientes_naturales.jpeg" alt="">
-          <p class="text-lg font-medium">Ingredientes naturales</p>
+          <div class="w-60 h-60 flex flex-col items-center">
+          <img class="rounded-xl shadow-lg" src="accents/ingredientes_naturales.jpeg" alt="">
+          <p class="text-lg font-medium mt-3">Ingredientes naturales</p>
          </div>
-          <div class="w-60 h-60 bg-sky-200 flex flex-col items-center">
-          <img src="accents/biodegradable.jpeg" alt="">
-          <p class="text-lg font-medium">Biodegradable</p>
+          <div class="w-60 h-60 flex flex-col items-center">
+          <img class="rounded-xl shadow-lg" src="accents/biodegradable.jpeg" alt="">
+          <p class="text-lg font-medium mt-3">Biodegradable</p>
          </div>
-          <div class="w-60 h-60 bg-sky-200 flex flex-col items-center">
-          <img src="accents/libre_de_sulfato (2).jpeg" alt="">
-          <p class="text-lg font-medium">Libre de sulfato</p>
+          <div class="w-60 h-60 flex flex-col items-center">
+          <img class="rounded-xl shadow-lg" src="accents/libre_de_sulfato (2).jpeg" alt="">
+          <p class="text-lg font-medium mt-3">Libre de sulfato</p>
          </div>
     
         </div>
       <div class="w-11/12 grid gap-20 gap-x-20 grid-cols-4 grid-rows-2 my-20 p-20 m-auto">
-        <div class="bg-sky-200 w-60 h-60 flex flex-col items-center justify-center">
+        <div class="bg-sky-200 shadow-lg w-60 h-60 flex flex-col items-center justify-center">
           <img class="w-30 h-20" src="./accents/producto.png" alt="imagen caja producto">
           <div class="flex items-center">
             <i class="fa-solid fa-tags pr-2"></i>
@@ -79,7 +85,7 @@
           </div>
           <p class="font-medium">Valor: ******</p>
         </div>
-        <div class="bg-sky-200 w-60 h-60 flex flex-col items-center justify-center">
+        <div class="bg-sky-200 shadow-lg w-60 h-60 flex flex-col items-center justify-center">
           <img class="w-30 h-20" src="./accents/producto.png" alt="imagen caja producto">
           <div class="flex items-center">
             <i class="fa-solid fa-tags pr-2"></i>
@@ -87,7 +93,7 @@
           </div>
           <p class="font-medium">Valor: ******</p>
         </div>
-        <div class="bg-sky-200 w-60 h-60 flex flex-col items-center justify-center">
+        <div class="bg-sky-200 shadow-lg w-60 h-60 flex flex-col items-center justify-center">
           <img class="w-30 h-20" src="./accents/producto.png" alt="imagen caja producto">
           <div class="flex items-center">
             <i class="fa-solid fa-tags pr-2"></i>
@@ -95,7 +101,7 @@
           </div>
           <p class="font-medium">Valor: ******</p>
         </div>
-        <div class="bg-sky-200 w-60 h-60 flex flex-col items-center justify-center">
+        <div class="bg-sky-200 shadow-lg w-60 h-60 flex flex-col items-center justify-center">
           <img class="w-30 h-20" src="./accents/producto.png" alt="imagen caja producto">
           <div class="flex items-center">
             <i class="fa-solid fa-tags pr-2"></i>
@@ -103,7 +109,7 @@
           </div>
           <p class="font-medium">Valor: ******</p>
         </div>
-        <div class="bg-sky-200 w-60 h-60 flex flex-col items-center justify-center">
+        <div class="bg-sky-200 shadow-lg w-60 h-60 flex flex-col items-center justify-center">
           <img class="w-30 h-20" src="./accents/producto.png" alt="imagen caja producto">
           <div class="flex items-center">
             <i class="fa-solid fa-tags pr-2"></i>
@@ -111,7 +117,7 @@
           </div>
           <p class="font-medium">Valor: ******</p>
         </div>
-        <div class="bg-sky-200 w-60 h-60 flex flex-col items-center justify-center">
+        <div class="bg-sky-200 shadow-lg w-60 h-60 flex flex-col items-center justify-center">
           <img class="w-30 h-20" src="./accents/producto.png" alt="imagen caja producto">
           <div class="flex items-center">
             <i class="fa-solid fa-tags pr-2"></i>
@@ -119,7 +125,7 @@
           </div>
           <p class="font-medium">Valor: ******</p>
         </div>
-        <div class="bg-sky-200 w-60 h-60 flex flex-col items-center justify-center">
+        <div class="bg-sky-200 shadow-lg w-60 h-60 flex flex-col items-center justify-center">
           <img class="w-30 h-20" src="./accents/producto.png" alt="imagen caja producto">
           <div class="flex items-center">
             <i class="fa-solid fa-tags pr-2"></i>
@@ -127,7 +133,7 @@
           </div>
           <p class="font-medium">Valor: ******</p>
         </div>
-        <div class="bg-sky-200 w-60 h-60 flex flex-col items-center justify-center">
+        <div class="bg-sky-200 shadow-lg w-60 h-60 flex flex-col items-center justify-center">
           <img class="w-30 h-20" src="./accents/producto.png" alt="imagen caja producto">
           <div class="flex items-center">
             <i class="fa-solid fa-tags pr-2"></i>
@@ -139,12 +145,12 @@
         <!--Agregar una seccion de 8 productos, con sus respectivas imagenes, nombres y precios-->
       </div>
       <div class="grid gap-0 grid-cols-2 grid-rows-1 w-11/12 2/6 m-auto pl-32">
-        <div class="w-4/6 h-full rounded-md">
+        <div class="w-4/6 h-full rounded-md shadow-lg">
           <img class="rounded-md h-full" src="./accents/banerVerticalProductos.jpg" alt="Productos naturales">
         </div>
-        <div class="w-4/6 h-full border-r-4 border-t-4 border-b-4 rounded-md">
-          <p class="font-bold text-3xl mb-10 pt-16">Productos completamente naturales.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta reprehenderit dolorum praesentium odio repellendus eveniet ab a, consequuntur nihil aperiam, magnam nesciunt ducimus. Quo fugiat, eum possimus tenetur sequi soluta.
+        <div class="w-4/6 h-full rounded-md shadow-lg bg-gradient-to-b from-slate-200 to-slate-100">
+          <p class="font-bold text-3xl mb-10 pt-16 pl-3">Productos completamente naturales.</p>
+          <p class="pl-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta reprehenderit dolorum praesentium odio repellendus eveniet ab a, consequuntur nihil aperiam, magnam nesciunt ducimus. Quo fugiat, eum possimus tenetur sequi soluta.
             <br>
             <br>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos maiores recusandae neque voluptates fugiat vero laborum totam nulla. Voluptate, maiores. Consequatur aliquam blanditiis distinctio dolor tempore maiores. Provident, expedita ipsam.
@@ -153,14 +159,14 @@
       </div>
     </main>
     <footer class="w-11/12 m-auto">
-        <div class="flex h-60 justify-around items-center text-xl border-4 border-b-4 mt-20 rounded-md">
+        <div class="flex h-60 justify-around items-center text-xl border-4 border-b-4 mt-20 rounded-md shadow-lg mb-10 bg-gradient-to-b from-cyan-400 to-cyan-100">
           <a href="#"><p>Encuentra lo que buscas</p></a>
           <a href="#"><p>Contactanos</p></a>
           <a href="#"><p>Acerca de nosotros</p></a>
           <a href="#"><p>Terminos y condiciones</p></a>
           <a href="#"><p>Politica de reembolso</p></a>
         </div>
-        <div class="flex justify-between h-20 border-4 p-3 rounded-md">
+        <div class="flex justify-between h-20 border-4 p-3 rounded-md bg-gradient-to-b from-cyan-200 to-transparent shadow-lg mb-10">
           <div class="flex flex-col ml-20">
             <div class="flex items-center">
               <i class="fa-regular fa-copyright mr-3"></i>
@@ -177,47 +183,49 @@
     
       <!--Inicio de sesión y registro por Paola Andrea Murillo-->
    
-      <section class="relative bg-cover bg-center" style="background-image: url(https://img.freepik.com/premium-photo/green-background-with-paper-packaging-green-leaves_14117-1181962.jpg?w=826); height: 100vh;">
+      
         <!-- Formulario de Inicio de Sesión -->
-          <div class="flex justify-center items-center h-full">
-        <form id="form-login" class="bg-gradient-to-r from-slate-100 via-transparent to-transparent p-6 rounded-lg shadow-md w-80 space-y-4 backdrop-blur-lg"> 
-      <h2 class="text-2xl font-bold text-center text-gray-700">Iniciar Sesión</h2>
-      <div>
-          <label for="usuario" class="block text-gray-600">Usuario</label>
-          <input id="usuario" type="text" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Ingresa tu usuario">
+        <section id="formulario" class="relative bg-cover bg-center" style="background-image: url(https://img.freepik.com/premium-photo/green-background-with-paper-packaging-green-leaves_14117-1181962.jpg?w=826); height: 100vh; display: none;" >
+          <!-- Formulario de Inicio de Sesión -->
+            <div class="flex justify-center items-center h-full">
+          <form id="form-login" class="bg-gradient-to-r from-slate-100 via-transparent to-transparent p-6 rounded-lg shadow-md w-80 space-y-4 backdrop-blur-lg"> 
+        <h2 class="text-2xl font-bold text-center text-gray-700">Iniciar Sesión</h2>
+        <div>
+            <label for="usuario" class="block text-gray-600">Usuario</label>
+            <input id="usuario" type="text" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Ingresa tu usuario">
+        </div>
+        <div>
+            <label for="contrasena" class="block text-gray-600">Contraseña</label>
+            <input id="contrasena" type="password" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Ingresa tu contraseña">
+        </div>
+        <div class="flex justify-between items-center">
+            <button id="btnIniciarSesion" type="button" onclick="iniciarSesion()" class="bg-cyan-400 text-white py-2 px-4 rounded-md hover:bg-cyan-500	">Iniciar Sesión</button>
+            <button type="button" id="btnLogin" class="text-cyan-500 hover:underline">¿No tienes cuenta?</button>
+        </div>
+      </form>
+      
+      <!-- Formulario de Registro -->
+      <form id="form-register" class="bg-gradient-to-r from-slate-100 via-transparent to-transparent p-6 rounded-lg shadow-md w-80 space-y-4 hidden backdrop-blur-lg">
+        <h2 class="text-2xl font-bold text-center text-gray-700">Registro</h2>
+        <div>
+            <input placeholder="Nombre" id="rnombre" type="text" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400">
+        </div>
+        <div>
+            <input placeholder="Correo" id="rcorreo" type="email" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400">
+        </div>
+        <div>
+            <input placeholder="Contraseña" id="rcontrasena" type="password" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400">
+        </div>
+       <div>
+            <input placeholder="Usuario" id="rusuario" type="text" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400">
+        </div>
+        <div class="flex justify-between items-center">
+            <button id="btnRegistrarUsuario" type="button" class="bg-cyan-400 text-white py-2 px-4 rounded-md hover:bg-cyan-500">Registrar</button>
+            <button id="btnRegistro" type="button" class="text-cyan-500 hover:underline">¿Ya tienes una cuenta?</button>
+        </div>
+      </form>
       </div>
-      <div>
-          <label for="contrasena" class="block text-gray-600">Contraseña</label>
-          <input id="contrasena" type="password" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Ingresa tu contraseña">
-      </div>
-      <div class="flex justify-between items-center">
-          <button id="btnIniciarSesion" type="button" onclick="iniciarSesion()" class="bg-cyan-400 text-white py-2 px-4 rounded-md hover:bg-cyan-500	">Iniciar Sesión</button>
-          <button type="button" id="btnLogin" class="text-cyan-500 hover:underline">¿No tienes cuenta?</button>
-      </div>
-    </form>
-    
-    <!-- Formulario de Registro -->
-    <form id="form-register" class="bg-gradient-to-r from-slate-100 via-transparent to-transparent p-6 rounded-lg shadow-md w-80 space-y-4 hidden backdrop-blur-lg">
-      <h2 class="text-2xl font-bold text-center text-gray-700">Registro</h2>
-      <div>
-          <input placeholder="Nombre" id="rnombre" type="text" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400">
-      </div>
-      <div>
-          <input placeholder="Correo" id="rcorreo" type="email" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400">
-      </div>
-      <div>
-          <input placeholder="Contraseña" id="rcontrasena" type="password" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400">
-      </div>
-     <div>
-          <input placeholder="Usuario" id="rusuario" type="text" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400">
-      </div>
-      <div class="flex justify-between items-center">
-          <button id="btnRegistrarUsuario" type="button" class="bg-cyan-400 text-white py-2 px-4 rounded-md hover:bg-cyan-500">Registrar</button>
-          <button id="btnRegistro" type="button" class="text-cyan-500 hover:underline">¿Ya tienes una cuenta?</button>
-      </div>
-    </form>
-    </div>
-    </section>
+      </section>
     
 
 

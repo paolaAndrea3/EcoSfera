@@ -1,8 +1,14 @@
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    height: 100vh;
+body {
+  height: 100vh;
+  height: 100vh;
+  background-image: url("./accents/fondobodyEcoSfera.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
 }
