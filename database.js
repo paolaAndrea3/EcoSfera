@@ -30,3 +30,5 @@ const productos = [{
     descripcion: 'lorem ipsum',
     categoria: 'Mascotas'
 }]
+
+
