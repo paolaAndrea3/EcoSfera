@@ -127,47 +127,10 @@ function registrarUsuario() {
 // }
 
 
-// function agregarAlCarrito(params) {
-//     /*Sebastian Pedroza */
-//     //Crear una funcion en la cual el usuario pueda agregar un producto al carrito de compras.
-// }
+function agregarAlCarrito(params) {
+    /*Sebastian Pedroza */
+    //Crear una funcion en la cual el usuario pueda agregar un producto al carrito de compras.
+}
 
 
 
-<<<<<<< Updated upstream
-=======
-// Seleccionamos los elementos de los botones y formularios
-// const formLogin = document.getElementById("form-login");
-// const formRegister = document.getElementById("form-register");
-// const btnLogin = document.getElementById("btnLogin");
-// const btnRegistro = document.getElementById("btnRegistro");
-
-// // Al hacer clic en "¿No tienes cuenta?", mostramos el formulario de registro y ocultamos el de inicio de sesión
-// btnLogin.addEventListener("click", (event) => {
-//     event.preventDefault(); // Evita cualquier acción predeterminada, como recargar la página
-//     formLogin.classList.add("hidden");
-//     formRegister.classList.remove("hidden");
-// });
-
-// // Al hacer clic en "¿Ya tienes una cuenta?", mostramos el formulario de inicio de sesión y ocultamos el de registro
-// btnRegistro.addEventListener("click", (event) => {
-//     event.preventDefault(); // Evita cualquier acción predeterminada, como recargar la página
-//     formRegister.classList.add("hidden");
-//     formLogin.classList.remove("hidden");
-// });
-
-//--------------------------------------------------------------funcion para añadir carrito
-
-
-// Obtener el select por su id
-const categoriaSelect = document.getElementById('categoria');
-
-// Agregar un evento cuando el valor cambie
-categoriaSelect.addEventListener('change', function() {
-    // Verificar que no se haya seleccionado la opción por defecto
-    if (this.value !== '#') {
-        // Redirigir a la página indicada en el valor de la opción seleccionada
-        window.location.href = this.value;
-    }
-});
->>>>>>> Stashed changes
