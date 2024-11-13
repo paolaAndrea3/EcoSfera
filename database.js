@@ -5,7 +5,6 @@ export const usuarios = [{
     nombreUsuario: 'aldo'
 }]
 
-
 const productos = [{
     nombrePoducto: 'Jabones de mano naturales',
     precio: 5900,

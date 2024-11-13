@@ -1,10 +1,81 @@
 import { usuarios } from "./database.js";
 
-//Seleccionamos los elementos de los botones y formularios
-const formLogin = document.getElementById("form-login");
-const formRegister = document.getElementById("form-register");
+//Constantes botones
 const btnLogin = document.getElementById("btnLogin");
 const btnRegistro = document.getElementById("btnRegistro");
+const btnBlog = document.getElementById('btn-blog');
+const btnIngresar = document.getElementById('btn-ingresar');
+const btnEcoSfera = document.getElementById('index'); //btn logo EcoSfera seccion principal
+const btnEcoSferaFormulario = document.getElementById('index-formulario');//btn logo ScoSfera seccion formulario
+
+
+//Constantes secciones de la pagina
+const cabeceraPrincipal = document.getElementById('cabecera-principal');
+const mainIndex = document.getElementById('main-index');
+const sectionBlog = document.getElementById('section-blog');
+const sectionFormulario = document.getElementById('section-formulario-inicioSesion-registro');
+const formLogin = document.getElementById("form-login");
+const formRegister = document.getElementById("form-register");
+const footerPrincipal = document.getElementById('footer-principal');
+
+
+//Vistas predefinidas por defecto al renderizar la pagina por primera vez
+sectionBlog.classList.add('hidden')
+sectionFormulario.classList.add('hidden')
+
+//Evento del btn logo EcoSfera seccion principal
+btnEcoSfera.addEventListener('click', mostrarMain)
+function mostrarMain() {
+    mainIndex.classList.remove('hidden')
+    cabeceraPrincipal.classList.remove('hidden')
+    footerPrincipal.classList.remove('hidden')
+    sectionBlog.classList.add('hidden')
+    sectionFormulario.classList.add('hidden')
+    
+}
+
+//Evento del btn logo EcoSfera seccion formulario
+btnEcoSferaFormulario.addEventListener('click', mostrarMain)
+
+// Evento del menu desplegable Elegir categoria
+document.getElementById('categoria').addEventListener('input', mostrarCatalogoCategoria);
+function mostrarCatalogoCategoria() {
+    let categoria = document.getElementById('categoria').value
+    switch (categoria) {
+        case 'aseoPersonal':
+            console.log('Esta es la categoria de Aseo Personal');
+            break;
+        case 'hogar':
+            console.log('Esta es la categoria de Hogar');
+            break;
+        case 'bienestarYBelleza':
+            console.log('Esta es la categoria de Bienestar y belleza');
+            break;
+        case 'mascotas':
+            console.log('Esta es la categoria de Mascotas');
+            break;
+    
+        default:
+            break;
+    }    
+}
+
+// Mostrar vista de la seccion blog
+btnBlog.addEventListener('click', mostrarBlog)
+function mostrarBlog() {
+    mainIndex.classList.add('hidden');
+    sectionBlog.classList.remove('hidden');
+}
+
+// Mostrar vista del menu inicio de sesión y registro
+btnIngresar.addEventListener('click', mostrarFormularioInicioSesion)
+function mostrarFormularioInicioSesion() {
+    cabeceraPrincipal.classList.add('hidden')
+    mainIndex.classList.add('hidden')
+    footerPrincipal.classList.add('hidden')
+    sectionBlog.classList.add('hidden')
+    sectionFormulario.classList.remove('hidden')
+}
 
 // Al hacer clic en "¿No tienes cuenta?", mostramos el formulario de registro y ocultamos el de inicio de sesión
 btnLogin.addEventListener("click", (event) => {
@@ -20,9 +91,8 @@ btnRegistro.addEventListener("click", (event) => {
     formLogin.classList.remove("hidden");
 });
 
+// Evento btn inicio de sesión
 document.getElementById('btnIniciarSesion').addEventListener('click', iniciarSesion)
-document.getElementById('btnRegistrarUsuario').addEventListener('click', registrarUsuario)
-
 function iniciarSesion() {
     let nombreusuario = document.getElementById('usuario').value
     let contrasena = document.getElementById('contrasena').value
@@ -43,16 +113,13 @@ function iniciarSesion() {
                         timer.textContent = `${Swal.getTimerLeft()}`;
                     }, 100);
                 },
-                willClose: () => {
-                    clearInterval(timerInterval);
-                    window.location.href = 'index.html'
-                }
             }).then((result) => {
                 /* Read more about handling dismissals below */
                 if (result.dismiss === Swal.DismissReason.timer) {
                     console.log("I was closed by the timer");
                 }
             });
+            mostrarMain()
         }else{
             Swal.fire({
                 title: "Error",
@@ -63,6 +130,9 @@ function iniciarSesion() {
     })
 
 }
+
+// Evento btn registrar usuario
+document.getElementById('btnRegistrarUsuario').addEventListener('click', registrarUsuario)
 function registrarUsuario() {
     let nombre = document.getElementById('rNombre').value
     let correo = document.getElementById('rCorreo').value
@@ -83,21 +153,18 @@ function registrarUsuario() {
                 nombreUsuario: nombreUsuario
             }
             usuarios.push(usuario)
-            let redireccion
             Swal.fire({
-                title: "¡Registrado con éxito!",
+                title: "¡Usuario registrado con éxito!",
                 text: "Puedes iniciar sesión ahora.",
                 icon: "success",
-                willClose: () => {
-                    clearInterval(redireccion);
-                    window.location.href = 'login.html'
-                }
             });
-            console.log(usuarios);
+            formRegister.classList.add('hidden')
+            formLogin.classList.remove('hidden')
         }
     })
     
 }
+
 
 // /*Carol rivera*/
 // // Crear una funcion que permita al usuario hacer una busqueda de productos.
