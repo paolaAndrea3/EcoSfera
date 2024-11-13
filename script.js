@@ -17,11 +17,20 @@ const sectionFormulario = document.getElementById('section-formulario-inicioSesi
 const formLogin = document.getElementById("form-login");
 const formRegister = document.getElementById("form-register");
 const footerPrincipal = document.getElementById('footer-principal');
+const aseoPersonal = document.getElementById('aseoPersonal');
+const bienestarYBelleza = document.getElementById('bienestarYBelleza');
+const hogar = document.getElementById('hogar');
+const mascotas = document.getElementById('mascotas');
 
 
 //Vistas predefinidas por defecto al renderizar la pagina por primera vez
 sectionBlog.classList.add('hidden')
 sectionFormulario.classList.add('hidden')
+aseoPersonal.classList.add('hidden')
+bienestarYBelleza.classList.add('hidden')
+hogar.classList.add('hidden')
+mascotas.classList.add('hidden')
+
 
 //Evento del btn logo EcoSfera seccion principal
 btnEcoSfera.addEventListener('click', mostrarMain)
@@ -31,7 +40,10 @@ function mostrarMain() {
     footerPrincipal.classList.remove('hidden')
     sectionBlog.classList.add('hidden')
     sectionFormulario.classList.add('hidden')
-    
+    aseoPersonal.classList.add('hidden')
+    bienestarYBelleza.classList.add('hidden')
+    hogar.classList.add('hidden')
+    mascotas.classList.add('hidden')
 }
 
 //Evento del btn logo EcoSfera seccion formulario
@@ -43,16 +55,40 @@ function mostrarCatalogoCategoria() {
     let categoria = document.getElementById('categoria').value
     switch (categoria) {
         case 'aseoPersonal':
-            console.log('Esta es la categoria de Aseo Personal');
+            aseoPersonal.classList.remove('hidden')
+            mainIndex.classList.add('hidden')
+            sectionBlog.classList.add('hidden')
+            sectionFormulario.classList.add('hidden')
+            hogar.classList.add('hidden')
+            bienestarYBelleza.classList.add('hidden')
+            mascotas.classList.add('hidden')
             break;
         case 'hogar':
-            console.log('Esta es la categoria de Hogar');
-            break;
+            aseoPersonal.classList.add('hidden')
+            mainIndex.classList.add('hidden')
+            sectionBlog.classList.add('hidden')
+            sectionFormulario.classList.add('hidden')
+            hogar.classList.remove('hidden')
+            bienestarYBelleza.classList.add('hidden')
+            mascotas.classList.add('hidden')
+        break;
         case 'bienestarYBelleza':
-            console.log('Esta es la categoria de Bienestar y belleza');
-            break;
+            aseoPersonal.classList.add('hidden')
+            mainIndex.classList.add('hidden')
+            sectionBlog.classList.add('hidden')
+            sectionFormulario.classList.add('hidden')
+            hogar.classList.add('hidden')
+            bienestarYBelleza.classList.remove('hidden')
+            mascotas.classList.add('hidden')
+        break;
         case 'mascotas':
-            console.log('Esta es la categoria de Mascotas');
+            aseoPersonal.classList.add('hidden')
+            mainIndex.classList.add('hidden')
+            sectionBlog.classList.add('hidden')
+            sectionFormulario.classList.add('hidden')
+            hogar.classList.add('hidden')
+            bienestarYBelleza.classList.add('hidden')
+            mascotas.classList.remove('hidden')
             break;
     
         default:
@@ -63,18 +99,27 @@ function mostrarCatalogoCategoria() {
 // Mostrar vista de la seccion blog
 btnBlog.addEventListener('click', mostrarBlog)
 function mostrarBlog() {
-    mainIndex.classList.add('hidden');
     sectionBlog.classList.remove('hidden');
+    mainIndex.classList.add('hidden');
+    aseoPersonal.classList.add('hidden');
+    hogar.classList.add('hidden');
+    mascotas.classList.add('hidden');
+    bienestarYBelleza.classList.add('hidden');
+
 }
 
 // Mostrar vista del menu inicio de sesión y registro
 btnIngresar.addEventListener('click', mostrarFormularioInicioSesion)
 function mostrarFormularioInicioSesion() {
+    sectionFormulario.classList.remove('hidden')
     cabeceraPrincipal.classList.add('hidden')
     mainIndex.classList.add('hidden')
     footerPrincipal.classList.add('hidden')
     sectionBlog.classList.add('hidden')
-    sectionFormulario.classList.remove('hidden')
+    aseoPersonal.classList.add('hidden');
+    hogar.classList.add('hidden');
+    mascotas.classList.add('hidden');
+    bienestarYBelleza.classList.add('hidden');
 }
 
 // Al hacer clic en "¿No tienes cuenta?", mostramos el formulario de registro y ocultamos el de inicio de sesión
